@@ -1,109 +1,103 @@
 // when the DOM is ready...
 $(document).ready(function () {
 
-    var $panels = $('#slider .scrollContainer > div');
-    var $container = $('#slider .scrollContainer');
+  var $panels = $('#slider .scrollContainer > div')
+  var $container = $('#slider .scrollContainer')
 
-    // if false, we'll float all the panels left and fix the width 
-    // of the container
-    var horizontal = false;
+  // if false, we'll float all the panels left and fix the width
+  // of the container
+  var horizontal = false
 
-    // float the panels left if we're going horizontal
-    if (horizontal) {
-        $panels.css({
-            'float' : 'left',
-            'position' : 'relative' // IE fix to ensure overflow is hidden
-        });
+  // float the panels left if we're going horizontal
+  if (horizontal) {
+    $panels.css({
+      'float': 'left',
+      'position': 'relative', // IE fix to ensure overflow is hidden
+    })
 
-        // calculate a new width for the container (so it holds all panels)
-        $container.css('width', $panels[0].offsetWidth * $panels.length);
-    }
+    // calculate a new width for the container (so it holds all panels)
+    $container.css('width', $panels[0].offsetWidth * $panels.length)
+  }
 
-    // collect the scroll object, at the same time apply the hidden overflow
-    // to remove the default scrollbars that will appear
-    var $scroll = $('#slider .scroll').css('overflow', 'hidden');
+  // collect the scroll object, at the same time apply the hidden overflow
+  // to remove the default scrollbars that will appear
+  var $scroll = $('#slider .scroll').css('overflow', 'hidden')
 
-    // apply our left + right buttons
-	
-	//The follow code is used for scroll left and right
-    //$scroll
-    // .before('<img class="scrollButtons left" src="" />')
-    // .after('<img class="scrollButtons right" src="" />');
-	
-    // handle nav selection
-    function selectNav() {
-        $(this)
-            .parents('ul:first')
-                .find('a')
-                    .removeClass('selected')
-                .end()
-            .end()
-            .addClass('selected');
-    }
+  // apply our left + right buttons
 
-    $('#slider .navigation').find('a').click(selectNav);
+  //The follow code is used for scroll left and right
+  //$scroll
+  // .before('<img class="scrollButtons left" src="" />')
+  // .after('<img class="scrollButtons right" src="" />');
 
-    // go find the navigation link that has this target and select the nav
-    function trigger(data) {
-        var el = $('#slider .navigation').find('a[href$="' + data.id + '"]').get(0);
-        selectNav.call(el);
-    }
+  // handle nav selection
+  function selectNav () {
+    $(this).parents('ul:first').find('a').removeClass('selected').end().end().addClass('selected')
+  }
 
-    if (window.location.hash) {
-        trigger({ id : window.location.hash.substr(1) });
-    } else {
-        $('ul.navigation a:first').click();
-    }
+  $('#slider .navigation').find('a').click(selectNav)
 
-    // offset is used to move to *exactly* the right place, since I'm using
-    // padding on my example, I need to subtract the amount of padding to
-    // the offset.  Try removing this to get a good idea of the effect
-    var offset = parseInt((horizontal ? 
-        $container.css('paddingTop') : 
-        $container.css('paddingLeft')) 
-        || 0) * -1;
+  // go find the navigation link that has this target and select the nav
+  function trigger (data) {
+    var el = $('#slider .navigation').find('a[href$="' + data.id + '"]').get(0)
+    selectNav.call(el)
+  }
 
-    var scrollOptions = {
-        target: $scroll, // the element that has the overflow
+  if (window.location.hash) {
+    trigger({ id: window.location.hash.substr(1) })
+  } else {
+    $('ul.navigation a:first').click()
+  }
 
-        // can be a selector which will be relative to the target
-        items: $panels,
+  // offset is used to move to *exactly* the right place, since I'm using
+  // padding on my example, I need to subtract the amount of padding to
+  // the offset.  Try removing this to get a good idea of the effect
+  var offset = parseInt((horizontal ?
+    $container.css('paddingTop') :
+    $container.css('paddingLeft'))
+    || 0) * -1
 
-        navigation: '.navigation a',
+  var scrollOptions = {
+    target: $scroll, // the element that has the overflow
 
-        // selectors are NOT relative to document, i.e. make sure they're unique
-        prev: 'img.left', 
-        next: 'img.right',
+    // can be a selector which will be relative to the target
+    items: $panels,
 
-        // allow the scroll effect to run both directions
-        axis: 'xy',
+    navigation: '.navigation a',
 
-        onAfter: trigger, // our final callback
+    // selectors are NOT relative to document, i.e. make sure they're unique
+    prev: 'img.left',
+    next: 'img.right',
 
-        offset: offset,
+    // allow the scroll effect to run both directions
+    axis: 'xy',
 
-        // duration of the sliding effect
-        duration: 500,
+    onAfter: trigger, // our final callback
 
-        // easing - can be used with the easing plugin: 
-        // http://gsgd.co.uk/sandbox/jquery/easing/
-        easing: 'swing'
-    };
+    offset: offset,
 
-    // apply serialScroll to the slider - we chose this plugin because it 
-    // supports// the indexed next and previous scroll along with hooking 
-    // in to our navigation.
-    $('#slider').serialScroll(scrollOptions);
+    // duration of the sliding effect
+    duration: 500,
 
-    // now apply localScroll to hook any other arbitrary links to trigger 
-    // the effect
-    $.localScroll(scrollOptions);
+    // easing - can be used with the easing plugin:
+    // http://gsgd.co.uk/sandbox/jquery/easing/
+    easing: 'swing',
+  }
 
-    // finally, if the URL has a hash, move the slider in to position, 
-    // setting the duration to 1 because I don't want it to scroll in the
-    // very first page load.  We don't always need this, but it ensures
-    // the positioning is absolutely spot on when the pages loads.
-    scrollOptions.duration = 1;
-    $.localScroll.hash(scrollOptions);
+  // apply serialScroll to the slider - we chose this plugin because it
+  // supports// the indexed next and previous scroll along with hooking
+  // in to our navigation.
+  $('#slider').serialScroll(scrollOptions)
 
-});
+  // now apply localScroll to hook any other arbitrary links to trigger
+  // the effect
+  $.localScroll(scrollOptions)
+
+  // finally, if the URL has a hash, move the slider in to position,
+  // setting the duration to 1 because I don't want it to scroll in the
+  // very first page load.  We don't always need this, but it ensures
+  // the positioning is absolutely spot on when the pages loads.
+  scrollOptions.duration = 1
+  $.localScroll.hash(scrollOptions)
+
+})

@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
      * @return void
      */
     // public function __construct()
@@ -18,42 +17,47 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    
+
     public function index()
     {
         return view('home');
     }
-       public function about()
+
+    public function about()
     {
         return view('home.about');
     }
-       public function contact()
+
+    public function contact()
     {
         return view('home.contact');
     }
-      public function works()
+
+    public function works()
     {
         return view('home.works');
     }
-       public function gallery()
+
+    public function gallery()
     {
         return view('home.gallery');
     }
 
-       public function education()
+    public function education()
     {
         return view('home.education');
     }
-      public function projects()
+
+    public function projects()
     {
         return view('home.projects');
     }
-       public function languages()
+
+    public function languages()
     {
         return view('home.languages');
     }
-  
+
 }

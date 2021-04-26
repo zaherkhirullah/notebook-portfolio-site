@@ -11,20 +11,23 @@
 |
 */
 
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Auth::routes();
+
 Route::get('/', function () {
     return view('home');
 });
 
 
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
+Route::get('/works', [HomeController::class, 'works'])->name('works');
+Route::get('/education', [HomeController::class, 'education'])->name('education');
+Route::get('/projects', [HomeController::class, 'projects'])->name('projects');
+Route::get('/languages', [HomeController::class, 'languages'])->name('languages');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/about', 'HomeController@about')->name('about');
-Route::get('/contact', 'HomeController@contact')->name('contact');
-Route::get('/gallery', 'HomeController@gallery')->name('gallery');
-Route::get('/works', 'HomeController@works')->name('works');
-Route::get('/education', 'HomeController@education')->name('education');
-Route::get('/projects', 'HomeController@projects')->name('projects');
-Route::get('/languages', 'HomeController@languages')->name('languages');
-
-// Auth::routes();
-// Route::get('/home1', 'HomeController@index1')->name('home1');
