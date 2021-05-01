@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="panel" id="languages">
-        <div class="content_section">
+        <div class="content-section">
             <h1>My Languages</h1>
 
             <p>
@@ -57,8 +56,5 @@
                    </div>
                </div>
             </div>
-
-        </div>
-
     </div> <!-- end of languages -->
 @endsection

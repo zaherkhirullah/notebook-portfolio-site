@@ -3,10 +3,10 @@
 @section('content')
 
     <div class="col-md-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">Login</div>
+        <div class="card card-light">
+            <div class="card-header">Login</div>
 
-            <div class="panel-body">
+            <div class="card-body">
                 <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
 

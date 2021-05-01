@@ -7,13 +7,11 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="keywords" content=""/>
-    <meta name="description" content=""/>
+    <meta name="keywords" content="Notebook, protfolio, website"/>
+    <meta name="description" content="Notebook protfolio website"/>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <title>{{ config('app.name', 'Zaher Khirullah') }}</title>
 
     <!-- Styles -->
@@ -45,42 +43,42 @@ $site_link = "https://zaherr.com";
                 <ul class="navigation">
 
                     <li>
-                        <a href="{{ route('home') }}" class="selected menu_01">
+                        <a href="{{ route('home') }}" class="selected menu-1">
                             <i class="glyphicon glyphicon-home"></i> HOME
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('works') }}" class="menu_03">
+                        <a href="{{ route('works') }}" class="menu-3">
                             <i class="glyphicon glyphicon-briefcase"></i> Works
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('gallery') }}" class="menu_04">
+                        <a href="{{ route('gallery') }}" class="menu-4">
                             <i class="glyphicon glyphicon-picture"></i> Gallery
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('projects') }}" class="menu_01">
+                        <a href="{{ route('projects') }}" class="menu-1">
                             <i class="glyphicon glyphicon-th"></i> Projects
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('education') }}" class="menu_03">
+                        <a href="{{ route('education') }}" class="menu-3">
                             <i class="glyphicon glyphicon-education"></i> Education
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('languages') }}" class="menu_04">
+                        <a href="{{ route('languages') }}" class="menu-4">
                             <i class="glyphicon glyphicon-globe"></i> Languages
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('about') }}" class="menu_02">
+                        <a href="{{ route('about') }}" class="menu-2">
                             <i class="glyphicon glyphicon-equalizer"></i> About Me
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('contact') }}" class="menu_05">
+                        <a href="{{ route('contact') }}" class="menu-5">
                             <i class="glyphicon glyphicon-earphone"></i> Contact
                         </a>
                     </li>
@@ -110,17 +108,10 @@ $site_link = "https://zaherr.com";
     <br/>
 </div>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
 
 <!-- Scripts -->
-<script src="{{asset_v("assets/js/coda-slider.js")}}"></script>
-<script src="{{asset_v("assets/js/jquery-1.2.6.js")}}"></script>
-<script src="{{asset_v("assets/js/jquery.scrollTo-1.3.3.js")}}"></script>
-<script src="{{asset_v("assets/js/jquery.localscroll-1.2.5.js")}}"></script>
-<script src="{{asset_v("assets/js/jquery.serialScroll-1.2.1.js")}}"></script>
-<script src="{{asset_v("assets/js/jquery.easing.1.3.js")}}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="{{asset_v('js/app.js') }}"></script>
 
 </body>
