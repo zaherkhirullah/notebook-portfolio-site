@@ -7,103 +7,123 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <title>{{ config('app.name', 'Zaher Khirullah') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset_v('assets/css/coda-slider.css') }}" rel="stylesheet">
+    <link href="{{ asset_v('assets/css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
+<?php
+$site_link = "https://zaherr.com";
+?>
+<div id="slider">
+    <div id="tooplate_wrapper">
+        <div id="tooplate_sidebar">
 
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'ZaherKhirullah') }}
-                </a>
+            <div id="header">
+                <h1 class="title-h2">
+                    <a href="{{$site_link}}" style="color:#000;">
+                        ZAHER KHIRULLAH
+                    </a>
+                </h1>
             </div>
-            localhost
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    &nbsp;
+            <div id="Auth">
+
+            </div>
+
+            <div id="menu">
+
+                <ul class="navigation">
+
+                    <li>
+                        <a href="{{ route('home') }}" class="selected menu_01">
+                            <i class="glyphicon glyphicon-home"></i> HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('works') }}" class="menu_03">
+                            <i class="glyphicon glyphicon-briefcase"></i> Works
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('gallery') }}" class="menu_04">
+                            <i class="glyphicon glyphicon-picture"></i> Gallery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('projects') }}" class="menu_01">
+                            <i class="glyphicon glyphicon-th"></i> Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('education') }}" class="menu_03">
+                            <i class="glyphicon glyphicon-education"></i> Education
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('languages') }}" class="menu_04">
+                            <i class="glyphicon glyphicon-globe"></i> Languages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('about') }}" class="menu_02">
+                            <i class="glyphicon glyphicon-equalizer"></i> About Me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('contact') }}" class="menu_05">
+                            <i class="glyphicon glyphicon-earphone"></i> Contact
+                        </a>
+                    </li>
+
                 </ul>
-                <div id="Auth">
-                <!--   @guest
-                    <div class="inline-block">
-                      <a href="{{ route('register') }}" class="menu_01">
-           <i class="glyphicon glyphicon-pencil"></i> Register 
-         </a>
-         <a href="{{ route('login') }}" class="menu_02">
-           <i class="glyphicon glyphicon-log-in"></i> Login 
-         </a>
-       </div >       
-    @else
-                    <div class="inline-block">
-                       <a href="#" class="dropdown-toggle menu_02" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                         <i class="glyphicon glyphicon-user"></i> {{ Auth::user()->name }}
-                            </a>
-                             <a href="{{ route('logout') }}" class="menu_05" onclick="event.preventDefault();
-          document.getElementById('logout-form').submit();">
-          <i class="glyphicon glyphicon-log-out"></i> 
-          </a>
-      </div>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          {{ csrf_field() }}
-                            </form>
-@endguest -->
+            </div>
+        </div> <!-- end of sidebar -->
+
+        <div id="content">
+            <div class="scroll">
+                <div class="scrollContainer">
+                    @yield('content')
+                    <div class="col_380 float_r"></div>
                 </div>
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @guest
-                        <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
-                    @else
-                        <li><a href="{{ route('about') }}">about</a></li>
-                        <li><a href="{{ route('contact') }}">contact</a></li>
-                        <li><a href="{{ route('about') }}">about</a></li>
-                        <li><a href="{{ route('contact') }}">contact</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endguest
-                </ul>
             </div>
-        </div>
-    </nav>
+        </div><!-- end of scroll -->
+    </div>
+</div> <!-- end of content -->
+<div id="footer">
 
-    @yield('content')
+    Copyright <i class="glyphicon glyphicon-copyright-mark"> </i> 2017 - {{\Carbon\Carbon::now()->year}}
+    &nbsp;
+    <i class="glyphicon glyphicon-registration-mark"> </i>
+    <a href="{{$site_link}}">Zaher Khirullah</a><br/>
+
+    <div class="cleaner"></div>
+    <br/>
 </div>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{asset_v("assets/js/coda-slider.js")}}"></script>
+<script src="{{asset_v("assets/js/jquery-1.2.6.js")}}"></script>
+<script src="{{asset_v("assets/js/jquery.scrollTo-1.3.3.js")}}"></script>
+<script src="{{asset_v("assets/js/jquery.localscroll-1.2.5.js")}}"></script>
+<script src="{{asset_v("assets/js/jquery.serialScroll-1.2.1.js")}}"></script>
+<script src="{{asset_v("assets/js/jquery.easing.1.3.js")}}"></script>
+<script src="{{asset_v('js/app.js') }}"></script>
+
 </body>
 </html>
+
+

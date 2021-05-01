@@ -1,9 +1,9 @@
-@extends('layouts.Layout')
+@extends('layouts.app')
 
 @section('content')
     <div class="col-md-12">
         <div class="panel panel-default">
-            <div class="panel-heading">Home Page</div>
+            <div class="panel-heading">Who is Zaher Khirullah ?</div>
 
             <div class="panel-body">
                 @if (session('status'))
@@ -13,24 +13,26 @@
                 @endif
                 <div class="panel" id="home">
                     <div class="content_section">
-                        <h2>Who is Zaher Khirullah ?</h2>
-                        <img src="images/tooplate_image_01.jpg" alt="Image 01" class="image_wrapper image_fl"/>
-                        <p><em>Nullam at erat ipsum, quis tincidunt mauris. Nunc sit amet sapien eget eros iaculis hendrerit quis a enim. Vestibulum at leo ante, vel auctor velit.</em></p>
-                        <p>Notebook is Created By <a rel="nofollow" href="http://www.tooplate.com">Zaher Khirullah</a>. Credits go to <a rel="nofollow" href="http://www.photovaco.com">Free Photos</a> for photos, <a rel="nofollow"
-                                                                                                                                                                                                                       href="http://jwloh.deviantart.com/art/Aquaticus-Social-91014249">jwloh</a>
-                            for Aquaticus social icons, and <a rel="nofollow" href="http://www.icojoy.com">icojoy.com</a> for icons used in this template. Morbi rutrum euismod elit, nec adipiscing ante sodales sed. Cras accumsan congue turpis a
-                            luctus.</p>
+                        <h2> I`m Zaher, Back-end web developer</h2>
+                        <img src="/assets/images/tooplate_image_01.jpg" alt="Image 01" class="image_wrapper image_fl"/>
+                        <p>
+                            <em>
+
+                            </em>
+                        </p>
+                        <p>My name is <a rel="nofollow" href="https://www.zaherr.com">Zaher Khirullah</a>, a Graduated Computer engineer living in Turkey. Also working in Imtilak Real Estate in Istanbul as a Back-end developer, Coding is my passion, my job is my hobby and always open to learning new tech stuff.
+                        </p>
                     </div>
 
                     <div class="content_section last_section">
                         <h2>Our Services</h2>
                         <ul class="service_list">
 
-                            <li><a href="#" class="service_one">Maecenas suscipit vulputate dui vel adipiscing</a></li>
-                            <li><a href="#" class="service_two">Pellentesque habitant morbi tristique senectus</a></li>
-                            <li><a href="#" class="service_three">Duis at sapien ut sapien commodo molestie</a></li>
-                            <li><a href="#" class="service_four">Nam porttitor quam eu ante aliquam eu</a></li>
-                            <li><a href="#" class="service_five">Maecenas posuere fringilla ipsum ut pretium</a></li>
+                            <li><a href="#" class="service_one">Web Development</a></li>
+                            <li><a href="#" class="service_two">Build Responsive Sites</a></li>
+                            <li><a href="#" class="service_three">Mobile Applications </a></li>
+                            <li><a href="#" class="service_four">Hosting services</a></li>
+{{--                            <li><a href="#" class="service_five">Maecenas posuere fringilla ipsum ut pretium</a></li>--}}
                         </ul>
                     </div>
                 </div> <!-- end of home -->
