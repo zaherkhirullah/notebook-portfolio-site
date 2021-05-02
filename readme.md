@@ -38,7 +38,7 @@ This is portfolio site to introduce yourself and show your projects and image ga
 
 <img src="https://img.shields.io/github/workflow/status/zaherkhirullah/notebook-portfolio-site/PHP Composer" alt="workflow" />
 
-##### _Laravel-workflow:_
+##### _Laravel:_
 
 <img src="https://img.shields.io/github/workflow/status/zaherkhirullah/notebook-portfolio-site/Laravel" alt="Laravel-workflow" />
 
