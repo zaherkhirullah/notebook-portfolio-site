@@ -51,8 +51,22 @@ This is portfolio site to introduce yourself and show your projects and image ga
 
 <img src="https://img.shields.io/github/languages/top/zaherkhirullah/notebook-portfolio-site" alt="languages-top" />
 
+</p>
+
+<hr>
+
+**_CODE QUALITY_**
+<p>
+<img src="https://scrutinizer-ci.com/g/zaherkhirullah/notebook-portfolio-site/badges/quality-score.png?b=master" alt="code-quality-score" />
+
+<img src="https://scrutinizer-ci.com/g/zaherkhirullah/notebook-portfolio-site/badges/build.png?b=master" alt="code-build" />
+
+<img src="https://scrutinizer-ci.com/g/zaherkhirullah/notebook-portfolio-site/badges/coverage.png?b=master" alt="code-badges-coverage" />
+
+<img src="https://scrutinizer-ci.com/g/zaherkhirullah/notebook-portfolio-site/badges/code-intelligence.svg?b=master" alt="code-intelligence" />
 
 </p>
+
 <hr>
 
 ***Code Sizes***
@@ -76,6 +90,7 @@ This is portfolio site to introduce yourself and show your projects and image ga
 
 
 </p>
+
 
 <hr>
 <p  align="center">
